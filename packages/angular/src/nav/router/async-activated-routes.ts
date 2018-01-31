@@ -10,7 +10,10 @@ import {
   ChildrenOutletContexts,
   Event,
   RouteReuseStrategy,
-  RouterState,
+  RouterState
+} from '@angular/router';
+
+import {
   TreeNode,
   advanceActivatedRoute,
   forEach,

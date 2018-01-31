@@ -6,19 +6,22 @@ import {
   NavigationCancel,
   NavigationEnd,
   NavigationError,
-  PreActivation,
   ResolveEnd,
   ResolveStart,
-  Router,
   RouterState,
   RouterStateSnapshot,
   RoutesRecognized,
   UrlTree,
+} from '@angular/router';
+
+import {
+  PreActivation,
+  Router,
   applyRedirects,
   createRouterState,
   isNavigationCancelingError,
   recognize
-} from '@danbucholtz/ng-router';
+} from '@danbucholtz/ng-router'
 
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
@@ -176,7 +179,7 @@ export class ExtendedRouter extends Router {
           activatedRoutes.push(new AsyncActivateRoutes(this.routeReuseStrategy, state, storedState, (evt: Event) => this.triggerEvent(evt)))
         })
         .then(() => {
-          const promises = activatedRoutes.map(activatedRoute => activatedRoute.activate(this.rootContexts));
+          const promises = activatedRoutes.map(activatedRoute => activatedRoute.activate(this.rootContexts as any));
           return Promise.all(promises)
             .then(
               () => {

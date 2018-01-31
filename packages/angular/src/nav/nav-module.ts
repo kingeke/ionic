@@ -21,10 +21,11 @@ import {
   ExtraOptions,
   Route,
   Router,
+  RouterModule,
   RouteReuseStrategy,
   UrlHandlingStrategy,
   UrlSerializer
-} from '@danbucholtz/ng-router';
+} from '@angular/router';
 
 import { IonicAngularModule } from '../module';
 
@@ -38,7 +39,8 @@ import { flatten } from '../util/util';
     IonNav
   ],
   imports: [
-    IonicAngularModule
+    IonicAngularModule,
+    RouterModule
   ],
   exports: [
     IonNav
@@ -74,7 +76,7 @@ export function setupRouter(
   routeReuseStrategy?: RouteReuseStrategy) {
 
 const router = new ExtendedRouter(
-    null, urlSerializer, contexts, location, injector, loader, compiler, flatten(config));
+    null, urlSerializer, contexts as any, location, injector, loader, compiler, flatten(config));
 
 if (urlHandlingStrategy) {
   router.urlHandlingStrategy = urlHandlingStrategy;
