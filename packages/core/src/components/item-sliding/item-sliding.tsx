@@ -34,7 +34,6 @@ export const enum SlidingState {
   }
 })
 export class ItemSliding {
-
   private item: HTMLIonItemElement;
   private list: HTMLIonListElement;
   private openAmount = 0;
@@ -42,15 +41,15 @@ export class ItemSliding {
   private optsWidthRightSide = 0;
   private optsWidthLeftSide = 0;
   private sides: ItemSide;
-  private tmr: any = null;
+  private tmr: any;
   private leftOptions: ItemOptions;
   private rightOptions: ItemOptions;
   private optsDirty = true;
   private gestureOptions: any;
 
   @Element() private el: HTMLElement;
-  @State() state: SlidingState = SlidingState.Disabled;
 
+  @State() state: SlidingState = SlidingState.Disabled;
 
   /**
    * Emitted when the sliding position changes.

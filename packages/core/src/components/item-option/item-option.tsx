@@ -49,20 +49,24 @@ export class ItemOption {
   }
 
   render() {
-
     const TagType = this.href ? 'a' : 'button';
 
-    // TODO TagType should wrap button-inner
-    return [
+    return (
       <TagType
         class='item-option-button'
         disabled={this.disabled}
         href={this.href}
-        onClick={this.clickedOptionButton.bind(this)}></TagType>,
-      <span class='item-option-button-inner'>
-        <slot></slot>
-      </span>
-    ];
+        onClick={this.clickedOptionButton.bind(this)}>
+        <span class='item-option-button-inner'>
+          <slot name='icon-only'></slot>
+          <slot name='start'></slot>
+          <slot name='top'></slot>
+          <slot></slot>
+          <slot name='bottom'></slot>
+          <slot name='end'></slot>
+        </span>
+      </TagType>
+    );
   }
 
 }
