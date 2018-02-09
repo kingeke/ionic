@@ -103,8 +103,8 @@ import { Platform } from '../../platform/platform';
     '[type]="_type" ' +
     'dir="auto" ' +
     '[attr.aria-labelledby]="_labelId" ' +
-    '[attr.min]="min" ' +
-    '[attr.max]="max" ' +
+    '[attr.min]="min" ' +  not working
+    '[attr.max]="max" ' +  not working
     '[attr.step]="step" ' +
     '[attr.autocomplete]="autocomplete" ' +
     '[attr.autocorrect]="autocorrect" ' +
